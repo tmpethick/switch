@@ -73,6 +73,7 @@ a:hover {
 .row {
     display: table-row;
     background-color: white;
+    height: 45px;
 }
 
 .column {
