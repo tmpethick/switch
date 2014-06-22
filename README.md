@@ -43,7 +43,7 @@ var switch = new Switch(document.getElementById('cb'));
 ```
 
 You can enable the plain css fallback for devices that are not support by added a class (in this example for Windows Phone):
-```
+```js
 if (navigator.maxTouchPoints || navigator.msMaxTouchPoints) {
   document.getElementById('cb').className = 'switch';
 }
