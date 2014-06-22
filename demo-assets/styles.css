@@ -1,0 +1,88 @@
+body {
+  font: normal 16px/20px "Helvetica Neue", Helvetica, sans-serif;
+  background-color: #EFEFF4;
+}
+
+
+h1.logo {
+    text-transform: uppercase;
+    background: url(logo.png) no-repeat center;
+    height: 67px;
+
+    text-indent: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+@media all and (-webkit-min-device-pixel-ratio: 1.5) {
+  h1.logo {
+    background-image: url(logo@2x.png);
+    background-size: 200px 67px;
+  }
+}
+
+h2 {
+    margin-top: 40px;
+}
+
+h3 {
+    color: #6D6D72;
+    font-weight: 300;
+    text-transform: uppercase;
+    font-size: 13px;
+    margin-top: 35px;
+    margin-bottom: 10px;
+}
+
+h2, p {
+    font-weight: 300;
+}
+
+h2, h3, p {
+    margin-left: 15px;
+    margin-right: 15px;
+
+}
+
+strong {
+    font-weight: 500;
+}
+
+
+a {
+    color: #5683C5;
+}
+
+a:hover {
+    color: #41659B;
+}
+
+.container {
+    max-width: 360px;
+    margin: 0 auto;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.section {
+    display: table;
+    width: 100%;
+    border-top: 1px solid #C8C7CC;
+}
+
+.row {
+    display: table-row;
+    background-color: white;
+}
+
+.column {
+    padding: 7px 15px;
+    border-bottom: 1px solid #C8C7CC;
+    display: table-cell;
+    vertical-align: middle;
+    text-align: right;
+}
+
+.column:first-child {
+    text-align: left;
+}
