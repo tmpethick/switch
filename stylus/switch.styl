@@ -1,6 +1,6 @@
 @import 'nib'
 
-// light colors
+// colors
 $grey         = #ecf0f1
 $light-green  = #2ecc71
 $light-grey   = #dfdfdf
@@ -49,45 +49,55 @@ input[type="radio"].switch
       top 0
       left 0
 
+    // `.js-switch-background` is the green background when the button is either being dragged or checked.
+    // `label:before` is used for the plain css solution.
     .js-switch-background
     &:before
       background-color $light-green
       box-shadow 0 0 0 1px transparent
-      // Use transition delay to remove the green border only when it hits the minimum.
+      // This transition will apply when the button goes from checked to unchecked.
+      // Use transition-delay to remove the green border only when it hits the minimum after the transition.
       transition width $transition-speed ease-in-out,
                  box-shadow 0s ease $transition-speed
 
+    // `.js-switch-button` is white cicle that you drag.
+    // `label:after` is used for the plain css solution.
     .js-switch-button
     &:after
       box-shadow 0 1px 3px rgba(0,0,0,.4)
       transition left $transition-speed ease-in-out
 
+  // Styling when checkbox is checked.
+  // Why not depend on the changes made by the javascript on drag, you ask?
+  //  1. It's an easy way to animate the transition when the button is release half way.
+  //  2. We want to support a plain css solution.
   &:checked + label
-      .js-switch-background
-      &:before
-        box-shadow 0 0 0 1px $light-green
-        width $switch-width - ($border-width * 2)
-        // Removes the box-shadow transition so the green border is added right away.
-        transition width $transition-speed ease-in-out
+    .js-switch-background
+    &:before
+      box-shadow 0 0 0 1px $light-green
+      width $switch-width - ($border-width * 2)
+      // Removes the box-shadow transition so the green border is added right away.
+      transition width $transition-speed ease-in-out
 
-      .js-switch-button
-      &:after
-        left $switch-width - $switch-height
+    .js-switch-button
+    &:after
+      left $switch-width - $switch-height
 
+  // These styles should overrule both when unchecked and checked.
   &:checked + label
   + label
-      // These rules apply when it's being dragged by a a touch.
-      &.js-switch-active
-        .js-switch-background
-          box-shadow 0 0 0 1px $light-green
-        .js-switch-background
-        .js-switch-button
-          transition none
+    // These rules apply when it's being dragged by a a touch.
+    &.js-switch-active
+      .js-switch-background
+        box-shadow 0 0 0 1px $light-green
+      .js-switch-background
+      .js-switch-button
+        transition none
 
-      // Make sure there is no border if you're holding it at it's minimum.
-      &.js-switch-active.js-switch-minimum
-        .js-switch-background
-          box-shadow none
+    // Makes sure there is no border if you're holding it at it's minimum.
+    &.js-switch-active.js-switch-minimum
+      .js-switch-background
+        box-shadow none
 
   &:disabled
   &:disabled:checked
