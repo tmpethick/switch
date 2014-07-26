@@ -9,12 +9,15 @@ Mobile Switch
 
 This is a really simple and lightweight library that transforms checkboxes on mobiles to behave like the native mobile switches.
 
-To keep it as lightweight as possible it is build as a library you would copy and tweak to your needs. To give you an idea what this means the js doesn't have any control over the styling. So in order to e.g. change the color of the switch you would need to modify the css. You can use the default style but most people would probably want to fit it to their current design - in that case look at it as a kind of boilerplate for your checkbox.
+A minimal amount of js is used to make the switch draggable – the rest is pure css. So much that the basic behaviour even works without js. The default design is clearly heavily inspire by the iOS 7 switch but the well documentated style can easily be change to fit your design.
 
-Keeping it small is also the reason why it currently only supports iOS and Android. So when you go check out [the demo](https://tmpethick.github.io/switch/demo.html) do it on your phone or use the [touch emulator in chrome](https://developer.chrome.com/devtools/docs/mobile-emulation#emulate-touch-events) (remember to reload the page after having enabled it).
+To keep it as lightweight as possible it currently only supports iOS and Android. So when you go check out [the demo][demo] do it on your phone or use the [touch emulator in chrome](https://developer.chrome.com/devtools/docs/mobile-emulation#emulate-touch-events) (remember to reload the page after having enabled it).
 
-![Example](images/example.gif)
 
+### Preview
+![Example](https://tmpethick.github.io/switch/images/example.gif)
+
+Check out the [real thing][demo].
 
 ### Usage
 Add the required javascript and css to your website:
@@ -78,7 +81,7 @@ npm install nib -g
 
 With the following command the stylus files can now automatically be compiled on change:
 {% highlight bash %}
-make
+make styles
 {% endhighlight %}
 
 If you would like to add support for another switch color you could add the following to `stylus` style:
@@ -99,3 +102,16 @@ input[type="radio"].switch.black
         .js-switch-background
           box-shadow 0 0 0 1px #000
 {% endhighlight %}
+
+The minified js is compiled with [Minify](https://coderaiser.github.io/minify/):
+{% highlight bash %}
+npm install minify -g
+{% endhighlight %}
+
+To compile:
+{% highlight bash %}
+make js
+{% endhighlight %}
+
+
+[demo]: https://tmpethick.github.io/switch/demo.html "Demo"
