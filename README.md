@@ -11,6 +11,7 @@ To keep it as lightweight as possible it currently only supports iOS and Android
 
 ### Preview
 ![Example](https://tmpethick.github.io/switch/images/example.gif)
+
 Check out the [real thing][demo].
 
 ### Usage
