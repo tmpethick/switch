@@ -73,7 +73,7 @@ npm install nib -g
 
 With the following command the stylus files can now automatically be compiled on change:
 ```bash
-make
+make styles
 ```
 
 If you would like to add support for another switch color you could add the following to `stylus` style:
@@ -93,4 +93,14 @@ input[type="radio"].switch.black
       &.js-switch-active
         .js-switch-background
           box-shadow 0 0 0 1px #000
+```
+
+The minified js is compiled with [Minify](https://coderaiser.github.io/minify/):
+```bash
+npm install minify -g
+```
+
+To compile:
+```bash
+make js
 ```
